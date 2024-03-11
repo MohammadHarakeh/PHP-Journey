@@ -20,5 +20,10 @@ function filterNumber($str){
     sort($numberArray);
     echo "[" .implode(', ', $numberArray) ."]";
 }
-filterNumber("hpd12aq3@8w$5");
+
+
+echo "Enter your string: ";
+$str = fgets(STDIN);
+
+$result = filterNumber($str);
 ?>
