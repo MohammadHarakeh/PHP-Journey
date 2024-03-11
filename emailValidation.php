@@ -10,7 +10,7 @@ function validateEmailAndPassword($email, $password) {
     }
 
     if (!preg_match($passwordPattern, $password)) {
-        return "Invalid password. It should have at least one uppercase letter, one lowercase letter, one digit, and a minimum length of 8 characters.";
+        return "Invalid password.";
     }
 
     return "Validation successful!";
