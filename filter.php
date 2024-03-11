@@ -14,10 +14,22 @@ function filterNumber($str){
             }
         }
     }
+    
     if($currentNumber !== ''){
         $numberArray[] = (int)$currentNumber;
     }
-    sort($numberArray);
+
+    for ($i = 0; $i < count($numberArray); $i++){
+        for ($j = 0; $j < count($numberArray)-1; $j++){
+            
+            if($numberArray[$j] > $numberArray[$j + 1]){
+                $temp = $numberArray[$j+1];
+                $numberArray[$j+1] = $numberArray[$j];
+                $numberArray[$j] = $temp;
+            }
+        }
+    }
+
     echo "[" .implode(', ', $numberArray) ."]";
 }
 
