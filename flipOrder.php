@@ -1,12 +1,26 @@
 <?php
-function flipper($numb){
-    $reversed = '';
+function flipper($number){
+    $isNegative = $number <0;
 
-    for($i = strlen($numb) - 1; $i >= 0; $i--){
-        $reversed .= $numb[$i];
+    $number = abs($number);
+
+    if($number < 10){
+        return $number;
+    }else{
+        $lastDigit = $number % 10;
+
+        $remainingDigits = (int) ($number/10);
+        echo $remainingDigits;
+        $reversedRemaining = flipper($remainingDigits);
+
+        $result = (int) ($lastDigit .$reversedRemaining);
+        
+        return $isNegative ? -$result : $result;
     }
-    return $reversed;
 }
 
-echo flipper("123");
+
+echo "Enter a number: ";
+$str = fgets(STDIN);
+echo flipper($str)
 ?>
