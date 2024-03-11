@@ -5,7 +5,7 @@ function filterNumber($str){
     $currentNumber = '';
 
     for($i = 0; $i < strlen($str); $i++){
-        if(is_numeric($splitStr[$i])){
+        if((is_numeric($splitStr[$i]) || ($splitStr[$i] == '-'))){
             $currentNumber .= $splitStr[$i];
         } else{
             if($currentNumber !== ''){
